@@ -4,8 +4,14 @@
 const nextConfig = {
   images: {
     loader: "default",
-    domains: ["https://secret-thicket-10512.herokuapp.com"],
+    domains: ["localhost"],
   },
 }
 
 module.exports = nextConfig
+
+module.exports = {
+  images: {
+    domains: ["secret-thicket-10512.herokuapp.com"],
+  },
+}
