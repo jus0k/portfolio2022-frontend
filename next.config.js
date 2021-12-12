@@ -9,9 +9,3 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-
-module.exports = {
-  images: {
-    domains: ["secret-thicket-10512.herokuapp.com"],
-  },
-}
