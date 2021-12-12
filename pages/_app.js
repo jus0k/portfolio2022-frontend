@@ -1,9 +1,11 @@
 import App from "next/app"
 import Head from "next/head"
-import "../assets/css/style.css"
+import { ThemeProvider } from "styled-components"
 import { createContext } from "react"
 import { fetchAPI } from "../lib/api"
 import { getStrapiMedia } from "../lib/media"
+import { GlobalStyle } from "../styles/global-styles"
+import { theme } from "../styles/theme"
 
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})
@@ -20,7 +22,10 @@ const MyApp = ({ Component, pageProps }) => {
         />
       </Head>
       <GlobalContext.Provider value={global.attributes}>
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ThemeProvider>
       </GlobalContext.Provider>
     </>
   )
